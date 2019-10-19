@@ -1,6 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
+int main()
+{
+	char a[100];
+	scanf("%s",a);
+	for(int i = 1 ; i <=strlen(a);i++)
+		printf("*%-*.*s*\n",strlen(a),i,a);
+		
+
+}
+
+
+#include <stdio.h>
+#include <string.h>
+
 int main() {
 	
 	char a[100];
