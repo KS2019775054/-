@@ -26,3 +26,24 @@ int main () {
 	
 	
 }
+#include <stdio.h>
+
+int main()
+{
+	char a,n;
+	int down;
+	scanf("%c",&a);
+	n = a-64;
+	down = n;
+	for(int i = 1; i<=n;i++)
+	{
+		for(int k=1;k<down;k++)
+			printf("-");
+		for(int j=1;j<=i;j++)
+			printf("%c",'A'+j-1);
+		for(int l=1;l<i;l++)
+			printf("%c",'A'+i-l-1);
+		printf("\n");
+		down--;
+	}
+}
