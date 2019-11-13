@@ -1,25 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int a[1000000];
-int h(int b)
+int h(int end,int *c)
 {
-	int c;
+	int d=0;
 	
-	for(int j = 0; j<=b ; j++)
+	for(int j = 0; j<end ; j++)
 	{
-		if(a[j] > c)
-			c = a[j];
+		if(c[j] > d)
+			d = c[j];
 	}
-	return c;
+	return d;
 }
 int main()
 {
-	int b,i=0,c=0;
+	int b,i=0;
+	int *a;
+	a = (int*)malloc(100000* sizeof(int));
+	
 	while(scanf("%d",&b) != EOF)
 	{
-		
 		a[i]=b;
 		i++;
 	}
-	printf("%d",h(i));
+	printf("%d",h(i,a));
 }
