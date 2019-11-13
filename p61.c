@@ -1,7 +1,17 @@
 #include <stdio.h>
 
-
 int a[1000000];
+int h(int b)
+{
+	int c;
+	
+	for(int j = 0; j<=b ; j++)
+	{
+		if(a[j] > c)
+			c = a[j];
+	}
+	return c;
+}
 int main()
 {
 	int b,i=0,c=0;
@@ -11,10 +21,5 @@ int main()
 		a[i]=b;
 		i++;
 	}
-	for(int j = 0; j<=i ; j++)
-	{
-		if(a[j] > c)
-			c = a[j];
-	}
-	printf("%d",c);
+	printf("%d",h(i));
 }
