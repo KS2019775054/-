@@ -51,3 +51,64 @@ int main()
 	printf("%d %d\n",m,end);
 	
 }
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int **a;
+	int rsum,tsum;
+	rsum = tsum = 0;
+	int rc,tc,rn,tn;
+	rc = tc = rn = tn = 0;
+	
+	
+	a = (int **)malloc(sizeof(int) *2000);
+	for(int i = 0; i <2000; i++)
+	{
+		a[i] =(int *) malloc(sizeof(int) * 2000);
+	}
+	
+	
+	int t,r;
+	scanf("%d %d",&t,&r);
+	for(int i = 0; i<t;i++)
+	{
+		for(int j = 0 ; j < r; j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+	
+	for(int i = 0; i <t ; i++)
+	{
+		rsum = 0;
+		for(int j = 0; j<r;j++)
+		{
+			rsum += a[i][j];
+		}
+		if(rc<=rsum)
+		{
+			rc = rsum;
+			rn = i+1;
+		}
+	}
+	
+	for(int i = 0; i <r ; i++)
+	{
+		tsum = 0;
+		for(int j = 0; j<t;j++)
+		{
+			tsum += a[j][i];
+		}
+		if(tc<=tsum)
+		{
+			tc = tsum;
+			tn = i+1;
+		}
+	}
+	printf("%d %d\n%d %d",rn,rc,tn,tc);
+}
