@@ -39,12 +39,8 @@ int main()
 	qsort(a,n,sizeof(int),mycomp);
 
 	if(n%2==0)
-	{
-		if(a[(n-2)/2]+a[(n)/2] == 0)
-			printf("0.0");
-		else
-			printf("%.1f",(a[(n-2)/2]+a[(n)/2])/2.0);
-	}
+		printf("%.1f",(a[(n-2)/2]+a[(n)/2])/2.0);
+	
 	else
 		printf("%d",a[(n-1)/2]);
 	
