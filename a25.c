@@ -1,28 +1,22 @@
 #include <stdio.h>
 
-int chk(int n)
+unsigned long long int	 chk(int n)
 {
-	int one,two,thr;
-	one = 1;
-	two = thr = 0;
-	for(int i = 0; i < n; i++)
+	unsigned long long int	 fi,se,tr;
+	se = tr = 0;
+	fi = 1;	
+	for(int i = 0; i < n; i ++)
 	{
-		thr = two + one;
-		one = two;
-		two = thr;
+		tr = fi + se;
+		fi = se;
+		se = tr;
 	}
-	return thr;
+	return tr;
 }
-
 
 int main()
 {
 	int n;
-	while(scanf("%d",&n), n != -1)
-	{
-		
-	printf("#%d: %d\n",n,chk(n));
-	
-	
-	}
+	while(scanf("%d",&n), n>=0)
+		printf("#%d: %llu\n",n,chk(n));
 }
